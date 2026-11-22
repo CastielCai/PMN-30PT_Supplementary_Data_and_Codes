@@ -1,2 +1,30 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Documentation and source files use LF by default.
+.gitattributes text eol=lf
+*.md text eol=lf
+*.m text eol=lf
+*.h text eol=lf
+*.cpp text eol=lf
+*.cu text eol=lf
+*.txt text eol=lf
+
+# Preserve CRLF in the original Windows-format reconstruction and tracing sources.
+02_RESIRE_package/*.m eol=crlf
+02_RESIRE_package/src/Cuda_extendedOBJ/FrequencyProbeFilter_*.m eol=crlf
+02_RESIRE_package/src/Cuda_extendedOBJ/*.cpp eol=crlf
+02_RESIRE_package/src/Cuda_extendedOBJ/*.cu eol=crlf
+02_RESIRE_package/src/src_extendedOBJ/@RESIRE_reconstructor/*.m eol=crlf
+02_RESIRE_package/src/src_extendedOBJ/MatrixQuaternionRot.m eol=crlf
+02_RESIRE_package/src/src_extendedOBJ/My_FourierShift.m eol=crlf
+02_RESIRE_package/src/src_extendedOBJ/My_paddzero.m eol=crlf
+02_RESIRE_package/src/src_extendedOBJ/My_stripzero.m eol=crlf
+02_RESIRE_package/src/src_extendedOBJ/My_volumn_index.m eol=crlf
+02_RESIRE_package/src/src_extendedOBJ/objectsize.m eol=crlf
+02_RESIRE_package/src/src_extendedOBJ/scanOriginVector.m eol=crlf
+03_Refinement_package/*.m eol=crlf
+05_Tracing_and_classification/**/*.m eol=crlf
+07_multislice_AET_simulation/**/*.m eol=crlf
+
+*.mat filter=lfs diff=lfs merge=lfs -text
